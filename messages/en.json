@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "blog": "Blog",
+    "contact": "Contact",
+    "about": "About"
+  },
+  "hero": {
+    "label": "Artify",
+    "line1": "We build",
+    "line2": "structures",
+    "line3": "that endure",
+    "body": "Artify delivers innovative, high-quality, and sustainable construction solutions for Mongolia's built environment.",
+    "ctaPrimary": "View Projects",
+    "ctaSecondary": "Contact Us",
+    "established": "EST. 2014"
+  },
+  "about": {
+    "label": "01 — About",
+    "heading": "Precision in every structure",
+    "body1": "Founded in 2014, we have delivered regional, urban, and industrial developments while maintaining rigorous quality standards.",
+    "body2": "With expertise spanning engineering, design, and project management, we provide tailored, sustainable solutions for every client.",
+    "stats": {
+      "projects": "150+ Projects",
+      "years": "12+ Years",
+      "experts": "48+ Experts",
+      "partners": "20+ Partners"
+    }
+  },
+  "testimonials": {
+    "label": "02 — Testimonials",
+    "heading": "Trusted by industry leaders",
+    "quote1": "Artify's professional expertise and ability to deliver on time were instrumental in the success of our project.",
+    "author1": "B. Batbayar, General Manager",
+    "quote2": "Quality, safety, and transparent communication are why Artify has become our long-term partner.",
+    "author2": "G. OyunChimeg, Project Director",
+    "quote3": "Meeting a team of this caliber in the construction sector has been a major advantage for us.",
+    "author3": "D. Enkhbold, Lead Engineer"
+  },
+  "products": {
+    "label": "03 — Products",
+    "heading": "Construction Solutions",
+    "blockAcademy": {
+      "title": "Block Academy",
+      "description": "A training platform combining construction education, certification, and hands-on practice."
+    },
+    "techInvent": {
+      "title": "Tech Invent",
+      "description": "Explore construction technology and innovation solutions through the Tech Invent project."
+    },
+    "customMaterials": {
+      "title": "Custom Materials",
+      "description": "Construction material solutions tailored to each project and adapted to local conditions."
+    },
+    "cta": "Learn More",
+    "order": "Order Now"
+  },
+  "blog": {
+    "label": "04 — Blog",
+    "heading": "Latest Articles",
+    "readMore": "Read More",
+    "noPosts": "No articles available yet."
+  },
+  "contact": {
+    "label": "Contact",
+    "heading": "Ready to start your project?",
+    "body": "Let us help turn your construction vision into reality. Reach out to our team.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send",
+    "success": "Thank you, your message has been received.",
+    "address": "Ulaanbaatar, Mongolia",
+    "phone": "+976 7711 2233",
+    "emailAddress": "info@artify.mn"
+  },
+  "footer": {
+    "tagline": "Building the future of construction",
+    "company": "Company",
+    "contact": "Contact",
+    "rights": "© 2024 Artify. All rights reserved."
+  }
+}

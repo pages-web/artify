@@ -1,0 +1,33 @@
+"use client";
+
+import { useLocale } from "next-intl";
+import { Link, usePathname } from "@/i18n/routing";
+
+const LABELS: Record<string, string> = {
+  en: "EN",
+  mn: "МН",
+};
+
+export function LanguageSwitcher({ locales }: { locales: string[] }) {
+  const locale = useLocale();
+  const pathname = usePathname();
+
+  return (
+    <div className="flex gap-3 text-sm">
+      {locales.map((l) => (
+        <Link
+          key={l}
+          href={pathname}
+          locale={l}
+          className={
+            l === locale
+              ? "font-bold text-primary"
+              : "text-foreground/60 hover:text-foreground transition-colors"
+          }
+        >
+          {LABELS[l] ?? l.toUpperCase()}
+        </Link>
+      ))}
+    </div>
+  );
+}
