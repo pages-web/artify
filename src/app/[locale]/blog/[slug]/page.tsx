@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getServerApolloClient, getStaticApolloClient } from "@/lib/apollo/server-client";
+import { getStaticApolloClient } from "@/lib/apollo/server-client";
 import { CP_POSTS, CP_POST } from "@/graphql/cms/queries/post";import { routing } from "@/i18n/routing";
 import { FadeIn } from "@/components/motion/FadeIn";
 import Image from "@/components/common/Image";
@@ -29,7 +29,7 @@ export async function generateMetadata({
   params: { locale: string; slug: string };
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const client = await getServerApolloClient();
+  const client = getStaticApolloClient();
   const { data } = await client.query<CpPostData>({
     query: CP_POST,
     variables: { slug, language: locale },
@@ -51,7 +51,7 @@ export default async function PostPage({
   params: { locale: string; slug: string };
 }) {
   const { locale, slug } = await params;
-  const client = await getServerApolloClient();
+  const client = getStaticApolloClient();
   const { data } = await client.query<CpPostData>({
     query: CP_POST,
     variables: { slug, language: locale },

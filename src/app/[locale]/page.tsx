@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { getServerApolloClient } from "@/lib/apollo/server-client";
+import { getStaticApolloClient } from "@/lib/apollo/server-client";
 import { CP_POSTS } from "@/graphql/cms/queries/post";
 import { Hero } from "@/components/sections/Hero";
 import { FeatureCards } from "@/components/sections/FeatureCards";
@@ -31,7 +31,7 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
 
-  const client = await getServerApolloClient();
+  const client = getStaticApolloClient();
   const { data } = await client.query<CpPostsData>({
     query: CP_POSTS,
     variables: { language: locale, status: "published", limit: 3 },

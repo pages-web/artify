@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { getServerApolloClient } from "@/lib/apollo/server-client";
+import { getStaticApolloClient } from "@/lib/apollo/server-client";
 import { CP_PAGE } from "@/graphql/cms/queries/page";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { ProductsSection } from "@/components/sections/ProductsSection";
@@ -26,7 +26,7 @@ export default async function ProductsPage({
 }) {
   const { locale } = await params;
 
-  const client = await getServerApolloClient();
+  const client = getStaticApolloClient();
   const { data } = await client.query<CpPageData>({
     query: CP_PAGE,
     variables: { language: locale },

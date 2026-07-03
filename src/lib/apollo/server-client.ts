@@ -1,7 +1,7 @@
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 import { cookies } from "next/headers";
 
-function makeClient(token?: string) {
+function makeClient(token?: string, staticBuild = false) {
   return new ApolloClient({
     link: new HttpLink({
       uri:
@@ -15,7 +15,9 @@ function makeClient(token?: string) {
           "",
         ...(token ? { authorization: `Bearer ${token}` } : {}),
       },
-      fetchOptions: { cache: "no-store" },
+      fetchOptions: staticBuild
+        ? { next: { revalidate: 60 } }
+        : { cache: "no-store" },
     }),
     cache: new InMemoryCache(),
   });
@@ -28,5 +30,5 @@ export async function getServerApolloClient() {
 }
 
 export function getStaticApolloClient() {
-  return makeClient();
+  return makeClient(undefined, true);
 }
