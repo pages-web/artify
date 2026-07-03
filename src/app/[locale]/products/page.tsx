@@ -29,11 +29,11 @@ export default async function ProductsPage({
   const client = await getServerApolloClient();
   const { data } = await client.query<CpPageData>({
     query: CP_PAGE,
-    variables: { slug: "products", language: locale },
+    variables: { language: locale },
     context: { fetchOptions: { next: { revalidate: 60 } } },
   });
 
-  const page = data?.cpPageDetail;
+  const page = data?.cpPages?.find((p) => p.slug === "products") ?? null;
 
   return (
     <>
