@@ -1,5 +1,16 @@
-import { redirect } from "next/navigation";
+export const metadata = {
+  title: "Artify",
+};
 
 export default function RootPage() {
-  redirect("/mn");
+  return (
+    <html lang="mn">
+      <head>
+        <meta httpEquiv="refresh" content="0;url=/mn" />
+      </head>
+      <body>
+        <p>Redirecting to <a href="/mn">/mn</a>...</p>
+      </body>
+    </html>
+  );
 }
