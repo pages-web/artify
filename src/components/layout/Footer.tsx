@@ -11,82 +11,82 @@ interface FooterProps {
 export default function Footer({ locale }: FooterProps) {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
-  const isMn = locale === "mn";
 
   const companyLinks = [
     { href: "/about", label: nav("about") },
     { href: "/products", label: nav("products") },
     { href: "/blog", label: nav("blog") },
-  ];
-
-  const contactLinks = [
     { href: "/contact", label: nav("contact") },
   ];
 
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-[1280px] px-6 py-16 lg:px-20">
-        <div className="grid gap-12 md:grid-cols-3">
-          <div>
-            <Link href="/" className="text-2xl font-semibold text-foreground">
-              Artify®
-            </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              {t("tagline")}
-            </p>
-          </div>
+    <footer className="mx-3 mt-10 pb-6 lg:mx-6">
+      <div className="overflow-hidden rounded-3xl bg-gradient-to-r from-blue-900 to-sky-600 px-6 py-10 text-white lg:rounded-[64px] lg:px-12 lg:py-16">
+        <div className="mx-auto max-w-[1400px]">
+          <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+            <div>
+              <Link href="/" className="font-display text-2xl font-bold text-white lg:text-3xl">
+                Artify®
+              </Link>
+              <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/80">
+                {t("tagline")}
+              </p>
+            </div>
 
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              {t("company")}
-            </h4>
-            <ul className="mt-4 space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-white/90">
+                {t("company")}
+              </h4>
+              <ul className="mt-5 space-y-3">
+                {companyLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-white/80 transition-colors hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-white/90">
+                {t("contact")}
+              </h4>
+              <ul className="mt-5 space-y-3">
+                <li className="flex items-start gap-2 text-sm text-white/80">
+                  <MapPin size={16} className="mt-0.5 shrink-0" />
+                  {t("address")}
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              {t("contact")}
-            </h4>
-            <ul className="mt-4 space-y-3">
-              <li className="flex items-start gap-3 text-sm text-muted-foreground">
-                <MapPin size={16} className="mt-0.5 shrink-0 text-primary" />
-                {isMn ? "Улаанбаатар хот, Монгол" : "Ulaanbaatar, Mongolia"}
-              </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Phone size={16} className="shrink-0 text-primary" />
-                +976 7711 2233
-              </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Mail size={16} className="shrink-0 text-primary" />
-                info@artify.mn
-              </li>
-              {contactLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
+                <li className="flex items-center gap-2 text-sm text-white/80">
+                  <Phone size={16} className="shrink-0" />
+                  {t("phone")}
                 </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+                <li className="flex items-center gap-2 text-sm text-white/80">
+                  <Mail size={16} className="shrink-0" />
+                  {t("emailAddress")}
+                </li>
+              </ul>
+            </div>
 
-        <div className="mt-16 border-t border-border pt-8">
-          <p className="text-xs text-muted-foreground">{t("rights")}</p>
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-white/90">
+                {locale === "mn" ? "Бүтээгдэхүүн" : "Products"}
+              </h4>
+              <ul className="mt-5 space-y-3">
+                <li className="text-sm text-white/80">Block Academy</li>
+                <li className="text-sm text-white/80">Tech Invent</li>
+                <li className="text-sm text-white/80">Custom Materials</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/20 pt-8 text-sm text-white/70 lg:flex-row">
+            <p>{t("rights")}</p>
+            <p>{t("copyright")}</p>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,26 +1,27 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@import "./marquee.css";
 
 :root {
-  --background: #0A0F1E;
-  --foreground: #F8FAFC;
-  --card: #111827;
-  --card-foreground: #F8FAFC;
-  --popover: #111827;
-  --popover-foreground: #F8FAFC;
-  --primary: #C9A227;
-  --primary-foreground: #0A0F1E;
-  --secondary: #111827;
-  --secondary-foreground: #F8FAFC;
-  --muted: #1E293B;
-  --muted-foreground: #94A3B8;
-  --accent: #C9A227;
-  --accent-foreground: #0A0F1E;
-  --border: #1E293B;
-  --input: #1E293B;
-  --ring: #C9A227;
+  --background: #FBFAF6;
+  --foreground: #262420;
+  --card: #FFFFFF;
+  --card-foreground: #262420;
+  --popover: #FFFFFF;
+  --popover-foreground: #262420;
+  --primary: #2563EB;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3EFE6;
+  --secondary-foreground: #262420;
+  --muted: #F3EFE6;
+  --muted-foreground: #6F6A61;
+  --accent: #0EA5E9;
+  --accent-foreground: #FFFFFF;
+  --border: #E8E2D6;
+  --input: #E8E2D6;
+  --ring: #2563EB;
   --success: #10B981;
-  --warning: #C9A227;
+  --warning: #F59E0B;
   --destructive: #EF4444;
 }
 
@@ -45,8 +46,8 @@
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-destructive: var(--destructive);
-  --font-sans: var(--font-inter);
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: var(--font-nunito);
+  --font-display: var(--font-montserrat);
 }
 
 html {
@@ -56,7 +57,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-family: var(--font-nunito), system-ui, sans-serif;
 }
 
 @media (prefers-reduced-motion: reduce) {

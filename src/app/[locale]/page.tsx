@@ -2,9 +2,10 @@ import { getTranslations } from "next-intl/server";
 import { getServerApolloClient } from "@/lib/apollo/server-client";
 import { CP_POSTS } from "@/graphql/cms/queries/post";
 import { Hero } from "@/components/sections/Hero";
+import { FeatureCards } from "@/components/sections/FeatureCards";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ProductsSection } from "@/components/sections/ProductsSection";
+import { MarqueeSection } from "@/components/sections/MarqueeSection";
 import { BlogSection } from "@/components/sections/BlogSection";
 import { ContactForm } from "@/components/sections/ContactForm";
 import type { CpPostsData } from "@/graphql/cms/queries/post";
@@ -40,9 +41,10 @@ export default async function HomePage({
   return (
     <>
       <Hero />
+      <FeatureCards />
       <AboutSection />
-      <TestimonialsSection />
       <ProductsSection />
+      <MarqueeSection />
       <BlogSection posts={data?.cpPosts ?? []} />
       <ContactForm locale={locale} />
     </>

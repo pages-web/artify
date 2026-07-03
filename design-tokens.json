@@ -1,56 +1,56 @@
 {
   "meta": {
     "siteName": "artify",
-    "visualDirection": "editorial-minimal",
+    "visualDirection": "teso-modern",
     "motionLevel": 2,
     "defaultLocale": "mn",
     "locales": ["mn", "en"]
   },
   "colors": {
     "brand": {
-      "primary": "#C9A227",
-      "secondary": "#0A0F1E",
-      "accent": "#C9A227"
+      "primary": "#2563EB",
+      "secondary": "#0F172A",
+      "accent": "#0EA5E9"
     },
     "neutral": {
-      "50": "#F8FAFC",
-      "100": "#F1F5F9",
-      "200": "#E2E8F0",
-      "300": "#CBD5E1",
-      "400": "#94A3B8",
-      "500": "#64748B",
-      "600": "#475569",
-      "700": "#334155",
-      "800": "#1E293B",
-      "900": "#0A0F1E"
+      "50": "#FBFAF6",
+      "100": "#F3EFE6",
+      "200": "#E8E2D6",
+      "300": "#D6CFC2",
+      "400": "#B0A99C",
+      "500": "#8A8479",
+      "600": "#6F6A61",
+      "700": "#55514A",
+      "800": "#3D3A35",
+      "900": "#262420"
     },
     "semantic": {
-      "background": "#0A0F1E",
-      "foreground": "#F8FAFC",
-      "card": "#111827",
-      "cardForeground": "#F8FAFC",
-      "popover": "#111827",
-      "popoverForeground": "#F8FAFC",
-      "primary": "#C9A227",
-      "primaryForeground": "#0A0F1E",
-      "secondary": "#111827",
-      "secondaryForeground": "#F8FAFC",
-      "muted": "#1E293B",
-      "mutedForeground": "#94A3B8",
-      "accent": "#C9A227",
-      "accentForeground": "#0A0F1E",
-      "border": "#1E293B",
-      "input": "#1E293B",
-      "ring": "#C9A227",
+      "background": "#FBFAF6",
+      "foreground": "#262420",
+      "card": "#FFFFFF",
+      "cardForeground": "#262420",
+      "popover": "#FFFFFF",
+      "popoverForeground": "#262420",
+      "primary": "#2563EB",
+      "primaryForeground": "#FFFFFF",
+      "secondary": "#F3EFE6",
+      "secondaryForeground": "#262420",
+      "muted": "#F3EFE6",
+      "mutedForeground": "#6F6A61",
+      "accent": "#0EA5E9",
+      "accentForeground": "#FFFFFF",
+      "border": "#E8E2D6",
+      "input": "#E8E2D6",
+      "ring": "#2563EB",
       "success": "#10B981",
-      "warning": "#C9A227",
+      "warning": "#F59E0B",
       "destructive": "#EF4444"
     }
   },
   "typography": {
     "families": {
-      "display": "Inter",
-      "body": "Inter",
+      "display": "Montserrat",
+      "body": "Nunito Sans",
       "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
     },
     "scale": {
@@ -81,18 +81,18 @@
       "10": 120
     },
     "layout": {
-      "maxWidth": "1280px",
-      "pagePadding": "80px",
-      "sectionGap": "120px",
-      "mobilePadding": "24px"
+      "maxWidth": "1920px",
+      "pagePadding": "48px",
+      "sectionGap": "80px",
+      "mobilePadding": "16px"
     }
   },
   "radius": {
     "none": 0,
-    "sm": 0,
-    "md": 0,
-    "lg": 0,
-    "xl": 0,
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
     "full": 9999
   },
   "shadows": {

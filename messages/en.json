@@ -8,39 +8,43 @@
   },
   "hero": {
     "label": "Artify",
-    "line1": "We build",
-    "line2": "structures",
-    "line3": "that endure",
+    "line1": "Build the future",
+    "line2": "of construction",
     "body": "Artify delivers innovative, high-quality, and sustainable construction solutions for Mongolia's built environment.",
     "ctaPrimary": "View Projects",
     "ctaSecondary": "Contact Us",
     "established": "EST. 2014"
   },
-  "about": {
-    "label": "01 — About",
-    "heading": "Precision in every structure",
-    "body1": "Founded in 2014, we have delivered regional, urban, and industrial developments while maintaining rigorous quality standards.",
-    "body2": "With expertise spanning engineering, design, and project management, we provide tailored, sustainable solutions for every client.",
-    "stats": {
-      "projects": "150+ Projects",
-      "years": "12+ Years",
-      "experts": "48+ Experts",
-      "partners": "20+ Partners"
+  "features": {
+    "projects": {
+      "title": "150+ Projects",
+      "description": "Successfully delivered regional, urban, and industrial developments."
+    },
+    "experts": {
+      "title": "48+ Experts",
+      "description": "A strong team of engineering, design, and project management professionals."
+    },
+    "sustainable": {
+      "title": "Sustainable Building",
+      "description": "Eco-friendly materials and energy-efficient designs."
     }
   },
-  "testimonials": {
-    "label": "02 — Testimonials",
-    "heading": "Trusted by industry leaders",
-    "quote1": "Artify's professional expertise and ability to deliver on time were instrumental in the success of our project.",
-    "author1": "B. Batbayar, General Manager",
-    "quote2": "Quality, safety, and transparent communication are why Artify has become our long-term partner.",
-    "author2": "G. OyunChimeg, Project Director",
-    "quote3": "Meeting a team of this caliber in the construction sector has been a major advantage for us.",
-    "author3": "D. Enkhbold, Lead Engineer"
+  "about": {
+    "label": "01 — About",
+    "heading": "12+ years of experience in construction",
+    "body1": "Since our founding in 2014, we have maintained rigorous quality standards and delivered tailored solutions for every client.",
+    "body2": "With expertise spanning engineering, design, and project management, we turn your construction vision into reality.",
+    "stats": {
+      "projects": "Projects",
+      "years": "Years",
+      "experts": "Experts",
+      "partners": "Partners"
+    }
   },
   "products": {
     "label": "03 — Products",
     "heading": "Construction Solutions",
+    "viewAll": "View All",
     "blockAcademy": {
       "title": "Block Academy",
       "description": "A training platform combining construction education, certification, and hands-on practice."
@@ -56,9 +60,13 @@
     "cta": "Learn More",
     "order": "Order Now"
   },
+  "partners": {
+    "label": "Partners"
+  },
   "blog": {
     "label": "04 — Blog",
     "heading": "Latest Articles",
+    "viewAll": "View All",
     "readMore": "Read More",
     "noPosts": "No articles available yet."
   },
@@ -79,6 +87,7 @@
     "tagline": "Building the future of construction",
     "company": "Company",
     "contact": "Contact",
-    "rights": "© 2024 Artify. All rights reserved."
+    "rights": "© 2024 Artify. All rights reserved.",
+    "copyright": "All rights reserved."
   }
 }
