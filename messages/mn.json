@@ -64,6 +64,9 @@
     "title": "Completed Work Experience",
     "subtitle": "Амжилттай хэрэгжүүлсэн төслүүд"
   },
+  "partners": {
+    "label": "Компанууд"
+  },
   "blog": {
     "label": "04 — Мэдээ",
     "heading": "Сүүлийн нийтлэлүүд",

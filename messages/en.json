@@ -64,6 +64,9 @@
     "title": "Completed Work Experience",
     "subtitle": "Successfully delivered projects"
   },
+  "partners": {
+    "label": "Companies"
+  },
   "blog": {
     "label": "04 — Blog",
     "heading": "Latest Articles",
