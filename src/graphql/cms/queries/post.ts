@@ -80,8 +80,6 @@ const POST_FRAGMENT = gql`
     featuredDate
     publishedDate
     scheduledDate
-    viewCount
-    reactionCounts
     thumbnail {
       name
       url

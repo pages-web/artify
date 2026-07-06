@@ -60,8 +60,9 @@
     "cta": "Дэлгэрэнгүй",
     "order": "Захиалах"
   },
-  "partners": {
-    "label": "Түншүүд"
+  "completedWork": {
+    "title": "Completed Work Experience",
+    "subtitle": "Амжилттай хэрэгжүүлсэн төслүүд"
   },
   "blog": {
     "label": "04 — Мэдээ",

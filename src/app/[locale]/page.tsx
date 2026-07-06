@@ -7,6 +7,7 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { ProductsSection } from "@/components/sections/ProductsSection";
 import { MarqueeSection } from "@/components/sections/MarqueeSection";
 import { BlogSection } from "@/components/sections/BlogSection";
+import { CompletedWorkSection } from "@/components/sections/CompletedWorkSection";
 import { ContactForm } from "@/components/sections/ContactForm";
 import type { CpPostsData } from "@/graphql/cms/queries/post";
 import type { Metadata } from "next";
@@ -44,6 +45,7 @@ export default async function HomePage({
       <FeatureCards />
       <AboutSection />
       <ProductsSection />
+      <CompletedWorkSection />
       <MarqueeSection />
       <BlogSection posts={data?.cpPosts ?? []} />
       <ContactForm locale={locale} />

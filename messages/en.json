@@ -60,8 +60,9 @@
     "cta": "Learn More",
     "order": "Order Now"
   },
-  "partners": {
-    "label": "Partners"
+  "completedWork": {
+    "title": "Completed Work Experience",
+    "subtitle": "Successfully delivered projects"
   },
   "blog": {
     "label": "04 — Blog",
