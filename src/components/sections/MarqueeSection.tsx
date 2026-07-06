@@ -16,11 +16,11 @@ const partners = [
 
 function LogoItem({ partner }: { partner: typeof partners[number] }) {
   return (
-    <div className="flex shrink-0 items-center justify-center px-5 py-3 lg:px-8 lg:py-4">
+    <div className="flex shrink-0 items-center justify-center px-6 py-4 lg:px-10 lg:py-6">
       <img
         src={partner.logo}
         alt={partner.name}
-        className="h-10 w-auto max-w-[160px] object-contain lg:h-14 lg:max-w-[200px]"
+        className="h-14 w-auto max-w-[200px] object-contain lg:h-20 lg:max-w-[280px]"
       />
     </div>
   );
