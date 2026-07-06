@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { FadeIn } from "@/components/motion/FadeIn";
 
 const partners = [
-  { name: "Partner 1", logo: "/images/logo1.jpeg" },
+  { name: "Partner 1", logo: "/images/logo1.png" },
   { name: "Partner 2", logo: "/images/logo2.png" },
   { name: "Partner 3", logo: "/images/logo3.png" },
   { name: "Partner 4", logo: "/images/logo4.png" },
@@ -16,11 +16,11 @@ const partners = [
 
 function LogoItem({ partner }: { partner: typeof partners[number] }) {
   return (
-    <div className="flex shrink-0 items-center justify-center rounded-2xl bg-white px-6 py-4 lg:rounded-3xl lg:px-10 lg:py-6">
+    <div className="flex shrink-0 items-center justify-center px-5 py-3 lg:px-8 lg:py-4">
       <img
         src={partner.logo}
         alt={partner.name}
-        className="h-10 w-auto max-w-[140px] object-contain lg:h-14 lg:max-w-[180px]"
+        className="h-10 w-auto max-w-[160px] object-contain lg:h-14 lg:max-w-[200px]"
       />
     </div>
   );
