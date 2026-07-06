@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { FadeIn } from "@/components/motion/FadeIn";
-import Image from "@/components/common/Image";
 
 const partners = [
   { name: "Partner 1", logo: "/images/logo1.jpeg" },
@@ -18,12 +17,10 @@ const partners = [
 function LogoItem({ partner }: { partner: typeof partners[number] }) {
   return (
     <div className="flex shrink-0 items-center justify-center rounded-2xl bg-white px-6 py-4 lg:rounded-3xl lg:px-10 lg:py-6">
-      <Image
+      <img
         src={partner.logo}
         alt={partner.name}
-        width={160}
-        height={64}
-        className="h-10 w-auto object-contain lg:h-14"
+        className="h-10 w-auto max-w-[140px] object-contain lg:h-14 lg:max-w-[180px]"
       />
     </div>
   );
