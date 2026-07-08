@@ -24,7 +24,6 @@ export function Hero() {
             type="video/webm"
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-accent/70" />
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <FadeIn>
             <span className="inline-block rounded-full bg-white/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white">
