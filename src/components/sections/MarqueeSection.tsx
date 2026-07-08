@@ -40,7 +40,7 @@ export function MarqueeSection() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="overflow-hidden rounded-[32px] bg-secondary px-4 py-5 lg:rounded-[64px] lg:px-8 lg:py-7">
+          <div className="overflow-hidden rounded-[32px] bg-white px-4 py-5 lg:rounded-[64px] lg:px-8 lg:py-7">
             <div className="flex animate-marquee items-center gap-4 lg:gap-6">
               {doubled.map((partner, index) => (
                 <LogoItem key={`${partner.name}-${index}`} partner={partner} />

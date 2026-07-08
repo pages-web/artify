@@ -21,7 +21,7 @@ export default function Footer({ locale }: FooterProps) {
 
   return (
     <footer className="mx-3 mt-10 pb-6 lg:mx-6">
-      <div className="overflow-hidden rounded-3xl bg-gradient-to-r from-blue-900 to-sky-600 px-6 py-10 text-white lg:rounded-[64px] lg:px-12 lg:py-16">
+      <div className="overflow-hidden rounded-3xl bg-gradient-to-r from-primary to-accent px-6 py-10 text-white lg:rounded-[64px] lg:px-12 lg:py-16">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
             <div>

@@ -98,14 +98,14 @@ export function CompletedWorkSection() {
   ];
 
   return (
-    <section className="bg-[#0a1128] px-3 py-16 text-white lg:px-6 lg:py-24">
+    <section className="bg-background px-3 py-16 text-foreground lg:px-6 lg:py-24">
       <div className="mx-auto max-w-[1600px]">
         <FadeIn>
           <div className="mb-10 text-center lg:mb-16">
             <h2 className="font-display text-3xl font-semibold lg:text-5xl">
               {t("title")}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/70">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               {t("subtitle")}
             </p>
           </div>
