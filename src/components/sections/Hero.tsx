@@ -4,14 +4,27 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { ArrowRight } from "lucide-react";
-import Image from "@/components/common/Image";
 
 export function Hero() {
   const t = useTranslations("hero");
 
   return (
     <section className="mx-3 mt-20 lg:mx-6 lg:mt-24">
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-accent px-6 py-16 lg:rounded-[64px] lg:px-16 lg:py-28">
+      <div className="relative overflow-hidden rounded-3xl px-6 py-16 lg:rounded-[64px] lg:px-16 lg:py-28">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+          poster="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Hudson_Yards_Construction_Time_Lapse_2012-2016.webm/960px--Hudson_Yards_Construction_Time_Lapse_2012-2016.webm.jpg"
+        >
+          <source
+            src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Hudson_Yards_Construction_Time_Lapse_2012-2016.webm"
+            type="video/webm"
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-accent/70" />
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <FadeIn>
             <span className="inline-block rounded-full bg-white/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white">

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getStaticApolloClient } from "@/lib/apollo/server-client";
-import { CP_POSTS, CP_POST } from "@/graphql/cms/queries/post";import { routing } from "@/i18n/routing";
+import { CP_POSTS } from "@/graphql/cms/queries/post";
+import { routing } from "@/i18n/routing";
 import { FadeIn } from "@/components/motion/FadeIn";
 import Image from "@/components/common/Image";
-import type { CpPostsData, CpPostData, Post } from "@/graphql/cms/queries/post";
+import type { CpPostsData, Post } from "@/graphql/cms/queries/post";
 
 export async function generateStaticParams() {
   const results = await Promise.all(
@@ -30,13 +31,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params;
   const client = getStaticApolloClient();
-  const { data } = await client.query<CpPostData>({
-    query: CP_POST,
-    variables: { slug, language: locale },
+  const { data } = await client.query<CpPostsData>({
+    query: CP_POSTS,
+    variables: { language: locale, status: "published", searchValue: slug, limit: 100 },
     context: { fetchOptions: { next: { revalidate: 60 } } },
+    errorPolicy: "ignore",
   });
 
-  const post = data?.cpPost;
+  const post = data?.cpPosts?.find((p: Post) => p.slug === slug);
   if (!post) return {};
 
   return {
@@ -52,13 +54,14 @@ export default async function PostPage({
 }) {
   const { locale, slug } = await params;
   const client = getStaticApolloClient();
-  const { data } = await client.query<CpPostData>({
-    query: CP_POST,
-    variables: { slug, language: locale },
+  const { data } = await client.query<CpPostsData>({
+    query: CP_POSTS,
+    variables: { language: locale, status: "published", searchValue: slug, limit: 100 },
     context: { fetchOptions: { next: { revalidate: 60 } } },
+    errorPolicy: "ignore",
   });
 
-  const post = data?.cpPost;
+  const post = data?.cpPosts?.find((p: Post) => p.slug === slug);
   if (!post) notFound();
 
   return (
