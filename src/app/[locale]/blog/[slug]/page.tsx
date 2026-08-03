@@ -86,7 +86,7 @@ export default async function PostPage({
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <h1 className="mt-4 font-display text-3xl font-semibold leading-tight text-white lg:text-5xl xl:text-6xl">
+            <h1 className="mt-4 font-display text-2xl font-semibold leading-tight text-white lg:text-4xl xl:text-5xl">
               {post.title}
             </h1>
           </FadeIn>
@@ -120,8 +120,8 @@ export default async function PostPage({
 
           {post.excerpt && (
             <FadeIn delay={0.4}>
-              <div className="mx-auto mt-12 max-w-3xl">
-                <p className="text-lg leading-relaxed text-muted-foreground lg:text-xl">
+              <div className="mx-auto mt-8 max-w-2xl">
+                <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
                   {post.excerpt}
                 </p>
               </div>
@@ -130,9 +130,9 @@ export default async function PostPage({
 
           {post.content && (
             <FadeIn delay={0.5}>
-              <div className="mx-auto mt-12 max-w-3xl">
+              <div className="mx-auto mt-8 max-w-2xl">
                 <div
-                  className="prose prose-lg max-w-none text-foreground prose-headings:font-display prose-headings:font-semibold prose-headings:text-foreground prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-primary prose-strong:text-foreground prose-ul:text-muted-foreground prose-li:marker:text-primary"
+                  className="prose prose-base max-w-none text-foreground prose-headings:font-display prose-headings:font-semibold prose-headings:text-foreground prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-primary prose-strong:text-foreground prose-ul:text-muted-foreground prose-li:marker:text-primary"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
               </div>
