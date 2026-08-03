@@ -2,7 +2,8 @@ import { getTranslations } from "next-intl/server";
 import { getStaticApolloClient } from "@/lib/apollo/server-client";
 import { CP_POSTS } from "@/graphql/cms/queries/post";
 import { FadeIn } from "@/components/motion/FadeIn";
-import { BlogSection } from "@/components/sections/BlogSection";
+import { FeaturedPost } from "@/components/sections/FeaturedPost";
+import { AllPostsSection } from "@/components/sections/AllPostsSection";
 import type { CpPostsData } from "@/graphql/cms/queries/post";
 import type { Metadata } from "next";
 
@@ -29,9 +30,19 @@ export default async function BlogPage({
   const client = getStaticApolloClient();
   const { data } = await client.query<CpPostsData>({
     query: CP_POSTS,
-    variables: { language: locale, status: "published", limit: 9 },
+    variables: { language: locale, status: "published", limit: 20 },
     context: { fetchOptions: { next: { revalidate: 60 } } },
   });
+
+  const posts = data?.cpPosts ?? [];
+  const sortedPosts = [...posts].sort((a, b) => {
+    const dateA = new Date(a.publishedDate ?? 0).getTime();
+    const dateB = new Date(b.publishedDate ?? 0).getTime();
+    return dateB - dateA;
+  });
+
+  const featuredPost = sortedPosts[0] ?? null;
+  const remainingPosts = sortedPosts.slice(1);
 
   return (
     <>
@@ -51,7 +62,8 @@ export default async function BlogPage({
         </div>
       </section>
 
-      <BlogSection posts={data?.cpPosts ?? []} />
+      <FeaturedPost post={featuredPost} />
+      <AllPostsSection posts={remainingPosts} />
     </>
   );
 }

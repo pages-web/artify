@@ -75,7 +75,12 @@
     "heading": "Latest Articles",
     "viewAll": "View All",
     "readMore": "Read More",
-    "noPosts": "No articles available yet."
+    "noPosts": "No articles available yet.",
+    "featured": "Featured",
+    "featuredHeading": "Featured Article",
+    "allPosts": "All News",
+    "allPostsSubtitle": "Latest news and updates",
+    "showLess": "Show Less"
   },
   "contact": {
     "label": "Contact",
