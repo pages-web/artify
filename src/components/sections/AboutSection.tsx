@@ -2,16 +2,10 @@
 
 import { useTranslations } from "next-intl";
 import { FadeIn } from "@/components/motion/FadeIn";
+import Image from "@/components/common/Image";
 
 export function AboutSection() {
   const t = useTranslations("about");
-
-  const stats = [
-    { value: "150+", label: t("stats.projects") },
-    { value: "12+", label: t("stats.years") },
-    { value: "48+", label: t("stats.experts") },
-    { value: "20+", label: t("stats.partners") },
-  ];
 
   return (
     <section className="px-3 py-10 lg:px-6 lg:py-16">
@@ -34,20 +28,18 @@ export function AboutSection() {
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-2 gap-3 lg:gap-4">
-            {stats.map((stat, index) => (
-              <FadeIn key={stat.label} delay={0.1 * index} direction="up">
-                <div className="rounded-3xl bg-card p-5 text-center shadow-sm lg:rounded-[32px] lg:p-8">
-                  <div className="font-display text-3xl font-bold text-primary lg:text-4xl">
-                    {stat.value}
-                  </div>
-                  <div className="mt-1 text-xs font-medium text-muted-foreground lg:text-sm">
-                    {stat.label}
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          <FadeIn delay={0.15} direction="up">
+            <div className="relative overflow-hidden rounded-3xl bg-card shadow-sm lg:rounded-[48px]">
+              <Image
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
+                alt="Construction team at work"
+                width={1200}
+                height={800}
+                className="h-full w-full object-cover"
+                style={{ aspectRatio: "4/3" }}
+              />
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>
