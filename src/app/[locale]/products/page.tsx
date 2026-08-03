@@ -38,18 +38,30 @@ export default async function ProductsPage({
   return (
     <>
       <section className="px-3 pt-28 lg:px-6 lg:pt-32">
-        <div className="rounded-3xl bg-gradient-to-br from-primary to-accent px-6 py-16 text-center text-white lg:rounded-[64px] lg:py-24">
-          <FadeIn>
-            <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
-              {page?.name ?? "Products"}
-            </span>
-          </FadeIn>
+        <div className="relative overflow-hidden rounded-3xl px-6 py-16 text-center text-white lg:rounded-[64px] lg:py-24">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80"
+              alt="Construction materials"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-accent/80" />
+          </div>
 
-          <FadeIn delay={0.1}>
-            <h1 className="mt-4 font-display text-3xl font-semibold leading-tight lg:text-5xl">
-              {page?.description ?? "Барилгын шийдлүүд"}
-            </h1>
-          </FadeIn>
+          <div className="relative z-10">
+            <FadeIn>
+              <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
+                {page?.name ?? "Products"}
+              </span>
+            </FadeIn>
+
+            <FadeIn delay={0.1}>
+              <h1 className="mt-4 font-display text-3xl font-semibold leading-tight lg:text-5xl">
+                {page?.description ?? "Барилгын шийдлүүд"}
+              </h1>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

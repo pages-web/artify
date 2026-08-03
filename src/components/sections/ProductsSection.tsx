@@ -12,14 +12,19 @@ interface ProductCardProps {
   external?: boolean;
   cta: string;
   delay?: number;
+  image: string;
 }
 
-function ProductCard({ title, description, href, external, cta, delay = 0 }: ProductCardProps) {
+function ProductCard({ title, description, href, external, cta, delay = 0, image }: ProductCardProps) {
   return (
     <FadeIn delay={delay} direction="up">
       <div className="flex flex-col rounded-3xl bg-card p-5 shadow-sm transition-all hover:shadow-md lg:rounded-[32px] lg:p-8">
         <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-muted lg:rounded-3xl">
-          <div className="h-full w-full bg-gradient-to-br from-secondary to-border" />
+          <img
+            src={image}
+            alt={title}
+            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+          />
         </div>
         <div className="mt-5 flex flex-1 flex-col">
           <h3 className="font-display text-lg font-semibold text-foreground lg:text-xl">{title}</h3>
@@ -78,6 +83,7 @@ export function ProductsSection() {
             href="/products"
             cta={t("cta")}
             delay={0.1}
+            image="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80"
           />
           <ProductCard
             title={t("techInvent.title")}
@@ -86,6 +92,7 @@ export function ProductsSection() {
             external
             cta={t("cta")}
             delay={0.2}
+            image="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80"
           />
           <ProductCard
             title={t("customMaterials.title")}
@@ -93,6 +100,7 @@ export function ProductsSection() {
             href="/contact"
             cta={t("order")}
             delay={0.3}
+            image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
           />
         </div>
       </div>
