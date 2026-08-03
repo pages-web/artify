@@ -4,11 +4,70 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { FadeIn } from "@/components/motion/FadeIn";
-import { ArrowRight, Calendar, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import type { Post } from "@/graphql/cms/queries/post";
 
 interface AllPostsSectionProps {
   posts: Post[];
+}
+
+function PostCard({ post, delay = 0 }: { post: Post; delay?: number }) {
+  const t = useTranslations("blog");
+
+  return (
+    <FadeIn delay={delay} direction="up">
+      <Link href={`/blog/${post.slug ?? post._id}`} className="group block h-full">
+        <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-card shadow-sm transition-all hover:shadow-md lg:rounded-[32px]">
+          <div className="aspect-[4/3] w-full overflow-hidden bg-muted">
+            {post.thumbnail?.url ? (
+              <img
+                src={post.thumbnail.url}
+                alt={post.title ?? ""}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-secondary to-border">
+                <span className="font-display text-3xl font-bold text-muted-foreground/30">
+                  Artify
+                </span>
+              </div>
+            )}
+          </div>
+
+          <div className="flex flex-1 flex-col p-5 lg:p-6">
+            <h3 className="font-display text-lg font-semibold text-foreground transition-colors group-hover:text-primary lg:text-xl">
+              {post.title ?? ""}
+            </h3>
+
+            <p className="mt-3 line-clamp-3 text-sm text-muted-foreground lg:text-base">
+              {post.excerpt ?? ""}
+            </p>
+
+            <div className="mt-auto pt-4">
+              <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                {t("readMore")}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="transition-transform group-hover:translate-x-1"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </article>
+      </Link>
+    </FadeIn>
+  );
 }
 
 export function AllPostsSection({ posts }: AllPostsSectionProps) {
@@ -49,59 +108,9 @@ export function AllPostsSection({ posts }: AllPostsSectionProps) {
           </div>
         </FadeIn>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {visiblePosts.map((post, index) => (
-            <FadeIn key={post._id} delay={0.05 * index} direction="up">
-              <Link href={`/blog/${post.slug ?? post._id}`} className="group block">
-                <article className="overflow-hidden rounded-3xl bg-card shadow-sm transition-all hover:shadow-md lg:rounded-[32px]">
-                  <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center lg:p-6">
-                    <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden rounded-2xl bg-muted sm:w-48 lg:w-64">
-                      {post.thumbnail?.url ? (
-                        <img
-                          src={post.thumbnail.url}
-                          alt={post.title ?? ""}
-                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                      ) : (
-                        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-secondary to-border">
-                          <span className="font-display text-2xl font-bold text-muted-foreground/30">
-                            Artify
-                          </span>
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="flex flex-1 flex-col justify-center">
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                        <Calendar size={14} />
-                        {post.publishedDate
-                          ? new Date(post.publishedDate).toLocaleDateString("mn-MN", {
-                              year: "numeric",
-                              month: "long",
-                              day: "numeric",
-                            })
-                          : ""}
-                      </div>
-
-                      <h3 className="mt-2 font-display text-lg font-semibold text-foreground transition-colors group-hover:text-primary lg:text-xl">
-                        {post.title ?? ""}
-                      </h3>
-
-                      <p className="mt-2 line-clamp-2 text-sm text-muted-foreground lg:text-base">
-                        {post.excerpt ?? ""}
-                      </p>
-                    </div>
-
-                    <div className="hidden shrink-0 sm:block">
-                      <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                        {t("readMore")}
-                        <ArrowRight size={14} />
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              </Link>
-            </FadeIn>
+            <PostCard key={post._id} post={post} delay={0.05 * index} />
           ))}
         </div>
 
