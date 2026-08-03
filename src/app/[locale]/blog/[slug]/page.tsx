@@ -4,6 +4,8 @@ import { getStaticApolloClient } from "@/lib/apollo/server-client";
 import { CP_POSTS } from "@/graphql/cms/queries/post";
 import { routing } from "@/i18n/routing";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { Link } from "@/i18n/routing";
+import { ArrowLeft, Calendar } from "lucide-react";
 import Image from "@/components/common/Image";
 import type { CpPostsData, Post } from "@/graphql/cms/queries/post";
 
@@ -64,47 +66,97 @@ export default async function PostPage({
   const post = data?.cpPosts?.find((p: Post) => p.slug === slug);
   if (!post) notFound();
 
-  return (
-    <article className="border-b border-border">
-      <div className="mx-auto max-w-[1280px] px-6 py-24 lg:px-20 lg:py-32">
-        <FadeIn>
-          <p className="text-sm text-muted-foreground">
-            {post.publishedDate
-              ? new Date(post.publishedDate).toLocaleDateString()
-              : ""}
-          </p>
-          <h1 className="mt-4 text-4xl font-light tracking-tight text-foreground lg:text-5xl">
-            {post.title}
-          </h1>
-        </FadeIn>
+  const formattedDate = post.publishedDate
+    ? new Date(post.publishedDate).toLocaleDateString("mn-MN", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).replace(/\./g, ".")
+    : "";
 
-        {post.thumbnail?.url && (
+  return (
+    <article className="bg-background">
+      {/* Hero Section with Dark Background */}
+      <div className="relative bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e] px-3 pt-28 lg:px-6 lg:pt-32">
+        <div className="mx-auto max-w-[1280px] pb-16 lg:pb-24">
+          <FadeIn>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-white"
+            >
+              <ArrowLeft size={16} />
+              Бүх мэдээ
+            </Link>
+          </FadeIn>
+
           <FadeIn delay={0.1}>
-            <div className="relative mt-12 aspect-[21/9] w-full overflow-hidden bg-muted">
-              <Image
-                src={post.thumbnail.url}
-                alt={post.title ?? ""}
-                fill
-                className="object-cover"
-              />
+            <div className="mt-8 flex items-center gap-2 text-sm text-[#f97316]">
+              <Calendar size={16} />
+              {formattedDate}
             </div>
           </FadeIn>
-        )}
 
-        {post.excerpt && (
           <FadeIn delay={0.2}>
-            <p className="mt-12 max-w-3xl text-lg text-muted-foreground">{post.excerpt}</p>
+            <h1 className="mt-4 font-display text-3xl font-semibold leading-tight text-white lg:text-5xl xl:text-6xl">
+              {post.title}
+            </h1>
           </FadeIn>
-        )}
+        </div>
 
-        {post.content && (
-          <FadeIn delay={0.3}>
-            <div
-              className="prose prose-invert mt-12 max-w-none"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+        {/* Subtle overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </div>
+
+      {/* Content Section */}
+      <div className="px-3 py-10 lg:px-6 lg:py-16">
+        <div className="mx-auto max-w-[1280px]">
+          {post.thumbnail?.url && (
+            <FadeIn delay={0.3}>
+              <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl bg-muted shadow-lg lg:rounded-[48px]">
+                <Image
+                  src={post.thumbnail.url}
+                  alt={post.title ?? ""}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </FadeIn>
+          )}
+
+          {post.excerpt && (
+            <FadeIn delay={0.4}>
+              <div className="mx-auto mt-12 max-w-3xl">
+                <p className="text-lg leading-relaxed text-muted-foreground lg:text-xl">
+                  {post.excerpt}
+                </p>
+              </div>
+            </FadeIn>
+          )}
+
+          {post.content && (
+            <FadeIn delay={0.5}>
+              <div className="mx-auto mt-12 max-w-3xl">
+                <div
+                  className="prose prose-lg max-w-none text-foreground prose-headings:font-display prose-headings:font-semibold prose-headings:text-foreground prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-primary prose-strong:text-foreground prose-ul:text-muted-foreground prose-li:marker:text-primary"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+              </div>
+            </FadeIn>
+          )}
+
+          {/* Back to all news link at bottom */}
+          <FadeIn delay={0.6}>
+            <div className="mt-16 border-t border-border pt-8 text-center">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
+              >
+                <ArrowLeft size={16} />
+                Бүх мэдээ рүү буцах
+              </Link>
+            </div>
           </FadeIn>
-        )}
+        </div>
       </div>
     </article>
   );

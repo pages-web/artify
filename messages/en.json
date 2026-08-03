@@ -80,7 +80,8 @@
     "featuredHeading": "Featured Article",
     "allPosts": "All News",
     "allPostsSubtitle": "Latest news and updates",
-    "showLess": "Show Less"
+    "showLess": "Show Less",
+    "backToAll": "All News"
   },
   "contact": {
     "label": "Contact",
