@@ -86,7 +86,7 @@ export default async function PostPage({
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <h1 className="mt-4 font-display text-2xl font-semibold leading-tight text-white lg:text-4xl xl:text-5xl">
+            <h1 className="mt-4 font-display text-xl font-semibold leading-tight text-white lg:text-3xl xl:text-4xl">
               {post.title}
             </h1>
           </FadeIn>
