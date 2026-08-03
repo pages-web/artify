@@ -8,7 +8,7 @@ export function AboutSection() {
   const t = useTranslations("about");
 
   return (
-    <section className="px-3 py-10 lg:px-6 lg:py-16">
+    <section className="bg-background px-3 py-10 lg:px-6 lg:py-16">
       <div className="mx-auto max-w-[1400px]">
         <div className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-16">
           <FadeIn className="h-full">

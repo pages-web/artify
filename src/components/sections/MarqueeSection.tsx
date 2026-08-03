@@ -31,7 +31,7 @@ export function MarqueeSection() {
   const doubled = [...partners, ...partners];
 
   return (
-    <section className="px-3 py-10 lg:px-6 lg:py-16">
+    <section className="bg-background px-3 py-10 lg:px-6 lg:py-16">
       <div className="mx-auto max-w-[1600px]">
         <FadeIn>
           <h2 className="mb-6 font-display text-2xl font-semibold text-foreground lg:mb-8 lg:text-4xl">

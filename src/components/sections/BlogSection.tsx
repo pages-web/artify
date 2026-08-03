@@ -14,7 +14,7 @@ export function BlogSection({ posts }: BlogSectionProps) {
   const t = useTranslations("blog");
 
   return (
-    <section className="px-3 py-10 lg:px-6 lg:py-16">
+    <section className="bg-secondary px-3 py-10 lg:px-6 lg:py-16">
       <div className="mx-auto max-w-[1400px]">
         <FadeIn>
           <div className="mb-8 flex items-center justify-between lg:mb-12">

@@ -20,8 +20,9 @@ export function FeatureCards() {
   ];
 
   return (
-    <section className="mx-3 py-8 lg:mx-6 lg:py-12">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+    <section className="bg-secondary px-3 py-10 lg:px-6 lg:py-16">
+      <div className="mx-auto max-w-[1400px]">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {cards.map((card, index) => {
           const Icon = card.icon;
           return (
@@ -38,8 +39,9 @@ export function FeatureCards() {
                 </p>
               </div>
             </FadeIn>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
