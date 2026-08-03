@@ -34,7 +34,7 @@ export function MarqueeSection() {
     <section className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 px-3 py-10 lg:px-6 lg:py-16">
       <div className="mx-auto max-w-[1600px]">
         <FadeIn>
-          <h2 className="mb-6 font-display text-2xl font-semibold text-foreground lg:mb-8 lg:text-4xl">
+          <h2 className="mb-6 text-center font-display text-2xl font-semibold text-foreground lg:mb-8 lg:text-4xl">
             {t("label")}
           </h2>
         </FadeIn>

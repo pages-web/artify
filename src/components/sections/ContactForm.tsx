@@ -21,6 +21,14 @@ export function ContactForm({ locale }: ContactFormProps) {
   return (
     <section className="bg-background px-3 py-10 lg:px-6 lg:py-16">
       <div className="mx-auto max-w-[1400px]">
+        <FadeIn>
+          <div className="mb-8 text-center lg:mb-12">
+            <h2 className="font-display text-2xl font-semibold text-foreground lg:text-4xl">
+              {t("label")}
+            </h2>
+          </div>
+        </FadeIn>
+
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
           <FadeIn>
             <div className="rounded-3xl bg-gradient-to-br from-primary to-accent p-6 text-white shadow-lg lg:rounded-[48px] lg:p-12">
