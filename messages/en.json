@@ -63,7 +63,9 @@
   },
   "completedWork": {
     "title": "Completed Work Experience",
-    "subtitle": "Successfully delivered projects"
+    "subtitle": "Successfully delivered projects",
+    "showAll": "View All Projects",
+    "showLess": "Show Less"
   },
   "partners": {
     "label": "Companies"

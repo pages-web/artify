@@ -63,7 +63,9 @@
   },
   "completedWork": {
     "title": "Completed Work Experience",
-    "subtitle": "Амжилттай хэрэгжүүлсэн төслүүд"
+    "subtitle": "Амжилттай хэрэгжүүлсэн төслүүд",
+    "showAll": "Бүгдийг харах",
+    "showLess": "Хураах"
   },
   "partners": {
     "label": "Компанууд"

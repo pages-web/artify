@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface Project {
   title: string;
@@ -47,6 +49,7 @@ function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number 
 
 export function CompletedWorkSection() {
   const t = useTranslations("completedWork");
+  const [showAll, setShowAll] = useState(false);
 
   const projects: Project[] = [
     {
@@ -97,6 +100,8 @@ export function CompletedWorkSection() {
     },
   ];
 
+  const visibleProjects = showAll ? projects : projects.slice(0, 4);
+
   return (
     <section className="bg-background px-3 py-16 text-foreground lg:px-6 lg:py-24">
       <div className="mx-auto max-w-[1600px]">
@@ -112,10 +117,31 @@ export function CompletedWorkSection() {
         </FadeIn>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <ProjectCard key={project.title} project={project} delay={0.05 * index} />
           ))}
         </div>
+
+        {projects.length > 4 && (
+          <div className="mt-10 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
+            >
+              {showAll ? (
+                <>
+                  {t("showLess")}
+                  <ChevronUp size={16} />
+                </>
+              ) : (
+                <>
+                  {t("showAll")}
+                  <ChevronDown size={16} />
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
