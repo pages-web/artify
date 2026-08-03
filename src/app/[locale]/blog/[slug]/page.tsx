@@ -6,7 +6,6 @@ import { routing } from "@/i18n/routing";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Link } from "@/i18n/routing";
 import { ArrowLeft, Calendar } from "lucide-react";
-import Image from "@/components/common/Image";
 import type { CpPostsData, Post } from "@/graphql/cms/queries/post";
 
 export async function generateStaticParams() {
@@ -79,18 +78,8 @@ export default async function PostPage({
       {/* Hero Section with Dark Background */}
       <div className="relative bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e] px-3 pt-28 lg:px-6 lg:pt-32">
         <div className="mx-auto max-w-[1280px] pb-16 lg:pb-24">
-          <FadeIn>
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-white"
-            >
-              <ArrowLeft size={16} />
-              Бүх мэдээ
-            </Link>
-          </FadeIn>
-
           <FadeIn delay={0.1}>
-            <div className="mt-8 flex items-center gap-2 text-sm text-[#f97316]">
+            <div className="flex items-center gap-2 text-sm text-[#f97316]">
               <Calendar size={16} />
               {formattedDate}
             </div>
@@ -110,18 +99,24 @@ export default async function PostPage({
       {/* Content Section */}
       <div className="px-3 py-10 lg:px-6 lg:py-16">
         <div className="mx-auto max-w-[1280px]">
-          {post.thumbnail?.url && (
-            <FadeIn delay={0.3}>
-              <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl bg-muted shadow-lg lg:rounded-[48px]">
-                <Image
+          {/* Featured Image */}
+          <FadeIn delay={0.3}>
+            <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl bg-muted shadow-lg lg:rounded-[48px]">
+              {post.thumbnail?.url ? (
+                <img
                   src={post.thumbnail.url}
                   alt={post.title ?? ""}
-                  fill
-                  className="object-cover"
+                  className="h-full w-full object-cover"
                 />
-              </div>
-            </FadeIn>
-          )}
+              ) : (
+                <img
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
+                  alt={post.title ?? ""}
+                  className="h-full w-full object-cover"
+                />
+              )}
+            </div>
+          </FadeIn>
 
           {post.excerpt && (
             <FadeIn delay={0.4}>
