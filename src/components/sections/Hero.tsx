@@ -17,11 +17,11 @@ export function Hero() {
           loop
           playsInline
           className="absolute inset-0 h-full w-full object-cover"
-          poster="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Hudson_Yards_Construction_Time_Lapse_2012-2016.webm/960px--Hudson_Yards_Construction_Time_Lapse_2012-2016.webm.jpg"
+          poster="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&q=80"
         >
           <source
-            src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Hudson_Yards_Construction_Time_Lapse_2012-2016.webm"
-            type="video/webm"
+            src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4"
+            type="video/mp4"
           />
         </video>
         <div className="absolute inset-0 bg-black/50" />
