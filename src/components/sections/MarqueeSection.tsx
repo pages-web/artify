@@ -10,7 +10,6 @@ const partners = [
   { name: "Zehnder", logo: "/images/zehnder.logo.png" },
   { name: "erxes", logo: "/images/erxes.logo.png", size: "small" },
   { name: "Block MN", logo: "/images/logo2.png" },
-  { name: "IDART", logo: "/images/logo5.png" },
 ];
 
 function LogoItem({ partner }: { partner: typeof partners[number] }) {
