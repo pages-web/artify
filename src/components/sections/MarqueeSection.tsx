@@ -22,11 +22,11 @@ function LogoItem({ partner }: { partner: typeof partners[number] }) {
   const heightClass = partner.size ? sizeClasses[partner.size as keyof typeof sizeClasses] : sizeClasses.default;
 
   return (
-    <div className="flex shrink-0 items-center justify-center px-6 py-4 lg:px-10 lg:py-6">
+    <div className="flex shrink-0 items-center justify-center px-3 py-2 lg:px-5 lg:py-4">
       <img
         src={partner.logo}
         alt={partner.name}
-        className={`w-auto max-w-[200px] object-contain lg:max-w-[280px] ${heightClass}`}
+        className={`w-auto max-w-[150px] object-contain lg:max-w-[200px] ${heightClass}`}
       />
     </div>
   );
@@ -47,7 +47,7 @@ export function MarqueeSection() {
 
         <FadeIn delay={0.1}>
           <div className="overflow-hidden rounded-[32px] bg-white/80 backdrop-blur px-4 py-5 shadow-sm lg:rounded-[64px] lg:px-8 lg:py-7">
-            <div className="flex animate-marquee items-center gap-4 lg:gap-6">
+            <div className="flex animate-marquee items-center gap-2 lg:gap-3">
               {doubled.map((partner, index) => (
                 <LogoItem key={`${partner.name}-${index}`} partner={partner} />
               ))}
