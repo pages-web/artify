@@ -28,6 +28,7 @@ export function Hero() {
           loop
           playsInline
           preload="auto"
+          crossOrigin="anonymous"
           className="absolute inset-0 h-full w-full object-cover"
           poster="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&q=80"
         >
@@ -36,7 +37,7 @@ export function Hero() {
             type="video/mp4"
           />
         </video>
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <FadeIn>
             <span className="inline-block rounded-full bg-white/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white">
