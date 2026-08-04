@@ -52,14 +52,8 @@ export default async function ProductsPage({
           <div className="relative z-10">
             <FadeIn>
               <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
-                {page?.name ?? "Products"}
+                БҮТЭЭГДЭХҮҮН
               </span>
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
-              <h1 className="mt-4 font-display text-3xl font-semibold leading-tight lg:text-5xl">
-                {page?.description ?? "Барилгын шийдлүүд"}
-              </h1>
             </FadeIn>
           </div>
         </div>

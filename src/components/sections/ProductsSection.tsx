@@ -63,16 +63,10 @@ export function ProductsSection() {
     <section className="px-3 py-10 lg:px-6 lg:py-16">
       <div className="mx-auto max-w-[1400px]">
         <FadeIn>
-          <div className="mb-8 flex items-center justify-between lg:mb-12">
+          <div className="mb-8 text-center lg:mb-12">
             <h2 className="font-display text-2xl font-semibold text-foreground lg:text-4xl">
-              {t("heading")}
+              Products
             </h2>
-            <Link
-              href="/products"
-              className="hidden rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary sm:inline-flex"
-            >
-              {t("viewAll")}
-            </Link>
           </div>
         </FadeIn>
 
