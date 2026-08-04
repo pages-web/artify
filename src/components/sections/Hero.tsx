@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { FadeIn } from "@/components/motion/FadeIn";
@@ -7,15 +8,26 @@ import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   const t = useTranslations("hero");
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((err) => {
+        console.error("Video autoplay failed:", err);
+      });
+    }
+  }, []);
 
   return (
     <section className="mx-3 mt-20 lg:mx-6 lg:mt-24">
       <div className="relative overflow-hidden rounded-3xl px-6 py-16 lg:rounded-[64px] lg:px-16 lg:py-28">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute inset-0 h-full w-full object-cover"
           poster="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&q=80"
         >
