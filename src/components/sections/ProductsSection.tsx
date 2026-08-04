@@ -89,7 +89,7 @@ export function ProductsSection() {
           <ProductCard
             title={t("techInvent.title")}
             description={t("techInvent.description")}
-            href="https://tech-invent.vercel.app/mn"
+            href="https://www.techinvent.mn/en"
             external
             cta={t("visitWebsite")}
             delay={0.2}
