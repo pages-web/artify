@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/motion/FadeIn";
 
 const partners = [
   { name: "Artify", logo: "/images/artify.logo.png" },
-  { name: "Remax Platinum", logo: "/images/remax.logo1.png" },
+  { name: "Remax Platinum", logo: "/images/remax.logo1.png", size: "small" },
   { name: "Tech Invent", logo: "/images/Tech.logo.png", size: "small" },
   { name: "Zehnder", logo: "/images/zehnder.logo.png" },
   { name: "erxes", logo: "/images/erxes.logo.png", size: "small" },
