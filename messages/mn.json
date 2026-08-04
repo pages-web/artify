@@ -59,7 +59,8 @@
       "description": "Төсөл бүрт тохирсон, орон нутгийн нөхцөлд зохицсон барилгын материалын шийдэл."
     },
     "cta": "Дэлгэрэнгүй",
-    "order": "Захиалах"
+    "order": "Захиалах",
+    "visitWebsite": "Вэб рүү зочлох"
   },
   "completedWork": {
     "title": "Completed Work Experience",

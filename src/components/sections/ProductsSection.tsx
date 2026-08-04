@@ -80,8 +80,9 @@ export function ProductsSection() {
           <ProductCard
             title={t("blockAcademy.title")}
             description={t("blockAcademy.description")}
-            href="/products"
-            cta={t("cta")}
+            href="https://block-academy.vercel.app"
+            external
+            cta={t("visitWebsite")}
             delay={0.1}
             image="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80"
           />
@@ -90,15 +91,16 @@ export function ProductsSection() {
             description={t("techInvent.description")}
             href="https://tech-invent.vercel.app/mn"
             external
-            cta={t("cta")}
+            cta={t("visitWebsite")}
             delay={0.2}
             image="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80"
           />
           <ProductCard
             title={t("customMaterials.title")}
             description={t("customMaterials.description")}
-            href="/contact"
-            cta={t("order")}
+            href="https://custom-materials.vercel.app"
+            external
+            cta={t("visitWebsite")}
             delay={0.3}
             image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
           />
