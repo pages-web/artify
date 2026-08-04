@@ -26,11 +26,11 @@ function PostCard({ post, delay = 0 }: { post: Post; delay?: number }) {
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             ) : (
-              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-secondary to-border">
-                <span className="font-display text-3xl font-bold text-muted-foreground/30">
-                  Artify
-                </span>
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
+                alt={post.title ?? ""}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
             )}
           </div>
 
