@@ -4,14 +4,14 @@ import { useTranslations } from "next-intl";
 import { FadeIn } from "@/components/motion/FadeIn";
 
 const partners = [
-  { name: "Partner 1", logo: "/images/logo1.png" },
-  { name: "Partner 2", logo: "/images/logo2.png" },
-  { name: "Partner 3", logo: "/images/logo3.png" },
-  { name: "Partner 4", logo: "/images/logo4.png" },
-  { name: "Partner 5", logo: "/images/logo5.png" },
-  { name: "Partner 6", logo: "/images/logo6.png" },
-  { name: "Partner 7", logo: "/images/logo7.png" },
-  { name: "Partner 8", logo: "/images/logo8.png" },
+  { name: "Artify", logo: "/images/artify.logo.png" },
+  { name: "erxes", logo: "/images/erxes.logo.png" },
+  { name: "NTV", logo: "/images/Ntv.logo.png" },
+  { name: "Remax Platinum", logo: "/images/remax.logo.png" },
+  { name: "Tech Invent", logo: "/images/Tech.logo.png" },
+  { name: "Zehnder", logo: "/images/zehnder.logo.png" },
+  { name: "Block MN", logo: "/images/logo2.png" },
+  { name: "IDART", logo: "/images/logo5.png" },
 ];
 
 function LogoItem({ partner }: { partner: typeof partners[number] }) {
