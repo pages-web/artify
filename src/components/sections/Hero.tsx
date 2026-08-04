@@ -11,8 +11,10 @@ export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch((err) => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true;
+      video.play().catch((err) => {
         console.error("Video autoplay failed:", err);
       });
     }
@@ -27,8 +29,7 @@ export function Hero() {
           muted
           loop
           playsInline
-          preload="auto"
-          crossOrigin="anonymous"
+          preload="metadata"
           className="absolute inset-0 h-full w-full object-cover"
           poster="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&q=80"
         >
