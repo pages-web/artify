@@ -38,9 +38,11 @@ export default function Header({ locale }: HeaderProps) {
           href="/"
           className="flex items-center justify-center lg:absolute lg:left-1/2 lg:-translate-x-1/2"
         >
-          <span className="font-display text-xl font-bold tracking-tight text-primary lg:text-2xl">
-            Artify®
-          </span>
+          <img
+            src="/images/artify.logo.png"
+            alt="Artify"
+            className="h-8 w-auto lg:h-10"
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
