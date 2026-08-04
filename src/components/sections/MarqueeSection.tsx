@@ -5,11 +5,10 @@ import { FadeIn } from "@/components/motion/FadeIn";
 
 const partners = [
   { name: "Artify", logo: "/images/artify.logo.png" },
-  { name: "erxes", logo: "/images/erxes.logo.png", size: "small" },
-  { name: "NTV", logo: "/images/Ntv.logo.png", size: "large" },
   { name: "Remax Platinum", logo: "/images/remax.logo1.png" },
   { name: "Tech Invent", logo: "/images/Tech.logo.png", size: "small" },
   { name: "Zehnder", logo: "/images/zehnder.logo.png" },
+  { name: "erxes", logo: "/images/erxes.logo.png", size: "small" },
   { name: "Block MN", logo: "/images/logo2.png" },
   { name: "IDART", logo: "/images/logo5.png" },
 ];
