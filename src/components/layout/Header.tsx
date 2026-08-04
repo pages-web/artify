@@ -41,7 +41,7 @@ export default function Header({ locale }: HeaderProps) {
           <img
             src="/images/artify.logo.png"
             alt="Artify"
-            className="h-8 w-auto lg:h-10"
+            className="h-16 w-auto lg:h-20"
           />
         </Link>
 
