@@ -107,7 +107,7 @@ export function CompletedWorkSection() {
       <div className="mx-auto max-w-[1600px]">
         <FadeIn>
           <div className="mb-10 text-center lg:mb-16">
-            <h2 className="font-display text-3xl font-semibold lg:text-5xl">
+            <h2 className="font-display text-2xl font-semibold lg:text-4xl">
               {t("title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
