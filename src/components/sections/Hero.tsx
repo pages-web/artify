@@ -83,6 +83,14 @@ export function Hero({
       }
     };
 
+    const handleEnded = () => {
+      if (video.loop) return;
+      video.currentTime = 0;
+      playVideo();
+    };
+
+    video.addEventListener("ended", handleEnded);
+
     const pauseVideo = () => {
       video.pause();
     };
@@ -118,6 +126,7 @@ export function Hero({
     return () => {
       observer.disconnect();
       document.removeEventListener("visibilitychange", handleVisibilityChange);
+      video.removeEventListener("ended", handleEnded);
     };
   }, []);
 
