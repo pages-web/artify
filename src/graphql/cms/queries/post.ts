@@ -57,6 +57,7 @@ export type Post = {
   reactionCounts?: Record<string, number>;
   thumbnail?: Attachment;
   images?: Attachment[];
+  attachments?: Attachment[];
   videoUrl?: string;
   customFieldsData?: Record<string, unknown>;
   customFieldsMap?: Record<string, unknown>;
@@ -97,6 +98,12 @@ const POST_FRAGMENT = gql`
       size
     }
     images {
+      name
+      url
+      type
+      size
+    }
+    attachments {
       name
       url
       type

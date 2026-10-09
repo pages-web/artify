@@ -47,7 +47,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       <Hero
         heading={heroHeading}
         body={heroBody}
-        videoUrl={page.videoUrl}
+        videoUrl={posts.hero?.videoUrl || page.videoUrl}
         locale={locale}
       />
       <AboutSection page={sectionPages.about} post={posts.about} />
@@ -63,4 +63,3 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
     </>
   );
 }
-

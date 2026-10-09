@@ -123,7 +123,9 @@ export function Hero({
 
   return (
     <section ref={sectionRef} className="relative flex min-h-[80vh] lg:h-[80vh] w-full items-center justify-center overflow-hidden">
+      {videoUrl ? (
       <video
+        key={videoUrl}
         ref={videoRef}
         autoPlay
         muted
@@ -132,8 +134,9 @@ export function Hero({
         preload="metadata"
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src={videoUrl || "/videos/hero.mp4"} type="video/mp4" />
+        <source src={videoUrl} />
       </video>
+      ) : null}
       {/* Cinematic dark overlay gradient for readability and seamless transparent header */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
 
@@ -174,4 +177,3 @@ export function Hero({
     </section>
   );
 }
-

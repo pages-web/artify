@@ -80,5 +80,5 @@ export type CmsPostDto = {
   excerpt: string | null;
   content: string | null;
   thumbnailUrl: string | null;
+  videoUrl: string | null;
 };
-

@@ -36,6 +36,16 @@ export const getPostBySlug = cache(
       const post = data?.cpPost;
       if (!post) return null;
 
+      const attachmentVideo = post.attachments?.find((attachment) => {
+        const type = attachment.type?.toLowerCase() ?? "";
+        const url = attachment.url.toLowerCase().split(/[?#]/, 1)[0];
+        return (
+          type.startsWith("video/") ||
+          /\b(mp4|webm|quicktime|ogg|m4v)\b/.test(type) ||
+          /\.(mp4|webm|mov|m4v|ogv)$/.test(url)
+        );
+      });
+
       return {
         id: post._id,
         title: post.title ?? "",
@@ -43,6 +53,7 @@ export const getPostBySlug = cache(
         excerpt: post.excerpt ?? null,
         content: post.content ?? null,
         thumbnailUrl: post.thumbnail?.url ?? null,
+        videoUrl: attachmentVideo?.url ?? post.videoUrl ?? null,
       };
     } catch (e) {
       console.error(`Failed to fetch CMS post by slug: ${slug}`, e);
